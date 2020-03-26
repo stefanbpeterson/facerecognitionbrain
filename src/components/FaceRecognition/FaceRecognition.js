@@ -1,12 +1,13 @@
 import React from 'react';
 import './FaceRecognition.css';
 
-const FaceRecognition = ({ imageUrl, demographics }) => {
+const FaceRecognition = ({ imageUrl, demographics, box }) => {
   if (imageUrl !== '') {
     return (
       <div className='flex justify-center flex-row flex-nowrap content-stretch items-center ma'>
         <div className='mt3 flexChildren'>
-          <img alt='' src={imageUrl} width='300px' height='auto' />
+          <img id='inputImage' alt='' src={imageUrl} width='300px' height='auto' />
+          <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
         </div>
   
         <div className='white flexChildren pa5 self-start'>
