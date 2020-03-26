@@ -1,51 +1,55 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, demographics, box }) => {
   if (imageUrl !== '') {
     return (
-      <div className='flex justify-center flex-row flex-nowrap content-stretch items-center ma'>
-        <div className='mt3 flexChildren'>
-          <img id='inputImage' alt='' src={imageUrl} width='300px' height='auto' />
-          <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
-        </div>
-  
-        <div className='white flexChildren pa5 self-start'>
-          <div className='f3' id='ageAppearance'>{'Age Appearance'}</div>
-          <div className='link dim white b pointer' id='age'>{demographics.age}</div>
-          <br></br>
-          <div className='f3' id='genderAppearance'>{'Gender Appearance'}</div>
-          <div className='link dim white b pointer' id='genderOne'>{demographics.genderOne}</div>
-          <div className='link dim white b pointer' id='genderTwo'>{demographics.genderTwo}</div>
-          <br></br>
-          <div className='f3' id='multiculturalAppearance'>{'Multicultural Appearance'}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalOne}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalTwo}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalThree}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalFour}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalFive}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalSix}</div>
-          <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalSeven}</div>
+      <Fragment>
+        <div id='imageDiv' className='flex justify-center flex-row flex-nowrap content-stretch items-center'>
+          <div className='absolute'>
+            <img id='inputImage' alt='' src={imageUrl} width='300px' height='auto' />
+            <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
+          </div>
         </div>
 
-        <div className='white flexChildren pa5 self-start'>
-          <div className='f3' id='probability'>{'Probability'}</div>
-          <div className='link dim white b pointer' id='ageProbability'>{demographics.ageProbability}</div>
-          <br></br>
-          <div className='f3' id='probability'>{'Probability'}</div>
-          <div className='link dim white b pointer' id='genderOneProbability'>{demographics.genderOneProbability}</div>
-          <div className='link dim white b pointer' id='genderTwoProbability'>{demographics.genderTwoProbability}</div>
-          <br></br>
-          <div className='f3' id='Probability'>{'Probability'}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalOneProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalTwoProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalThreeProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalFourProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalFiveProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalSixProbability}</div>
-          <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalSevenProbability}</div>
+        <div className='flex justify-center flex-row flex-nowrap content-stretch items-center ma'>
+          <div className='white flexChildren pa5 self-start'>
+            <div className='f3' id='ageAppearance'>{'Age Appearance'}</div>
+            <div className='link dim white b pointer' id='age'>{demographics.age}</div>
+            <br></br>
+            <div className='f3' id='genderAppearance'>{'Gender Appearance'}</div>
+            <div className='link dim white b pointer' id='genderOne'>{demographics.genderOne}</div>
+            <div className='link dim white b pointer' id='genderTwo'>{demographics.genderTwo}</div>
+            <br></br>
+            <div className='f3' id='multiculturalAppearance'>{'Multicultural Appearance'}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalOne}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalTwo}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalThree}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalFour}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalFive}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalSix}</div>
+            <div className='link dim white b pointer' id='multicultural'>{demographics.multiculturalSeven}</div>
+          </div>  
+
+          <div className='white flexChildren pa5 self-start'>
+            <div className='f3' id='probability'>{'Probability'}</div>
+            <div className='link dim white b pointer' id='ageProbability'>{demographics.ageProbability}</div>
+            <br></br>
+            <div className='f3' id='probability'>{'Probability'}</div>
+            <div className='link dim white b pointer' id='genderOneProbability'>{demographics.genderOneProbability}</div>
+            <div className='link dim white b pointer' id='genderTwoProbability'>{demographics.genderTwoProbability}</div>
+            <br></br>
+            <div className='f3' id='Probability'>{'Probability'}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalOneProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalTwoProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalThreeProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalFourProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalFiveProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalSixProbability}</div>
+            <div className='link dim white b pointer' id='multiculturalProbability'>{demographics.multiculturalSevenProbability}</div>
+          </div>
         </div>
-      </div>
+      </Fragment>
     )
   } else {
     return (

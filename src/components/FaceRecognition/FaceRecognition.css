@@ -22,3 +22,11 @@
   justify-content: center;
   cursor: pointer;
 }
+
+#imageDiv {
+  padding: 13vh;
+}
+
+#inputImage {
+  max-height: 350px;
+}
